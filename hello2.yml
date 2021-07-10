@@ -11,3 +11,18 @@
        name="nginx"
        state=present 
        update_cache=true
+       
+    - name: launching AWS instance using Ansible
+      ec2:
+        key_name: ohao
+        instance_type: t2.micro
+        image: ami-0b59bfac6be064b78
+        region: us-east-2
+        wait: yes
+        group: webserver
+        count: 1
+        vpc_subnet_id: subnet-775a420d
+        assign_public_ip: yes
+        aws_access_key: AKIA3PYWA6TATRZYONXP
+        aws_secret_key: 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
+
