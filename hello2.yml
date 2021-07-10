@@ -1,19 +1,18 @@
 - name: Hello World Sample
   hosts: all
-  become: true
+  gather_facts: false
+  vars:
+      keypair: ohao
+      instance_type: t2.micro
+      image: ami-0b9064170e32bde34
+      region: us-east-2
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!
-       
-    - name: launching AWS instance using Ansible
-      ec2:
-        key_name: ohao
-        instance_type: t2.micro
-        image: ami-0b59bfac6be064b78
-        region: us-east-2
-        wait: yes
-        group: webserver
-        count: 1
-        vpc_subnet_id: subnet-775a420d
-        assign_public_ip: yes
+    - name: make one instance
+      ec2: image={{ image }}
+           instance_type={{ instance_type }}
+           keypair={{ keypair }}
+           region={{ region }}
+           wait=true
+      register: ec2
+
+
