@@ -1,5 +1,4 @@
-- name: Hello World Sample
-  hosts: all
+- hosts: localhost
   gather_facts: false
   vars:
       keypair: ohao
