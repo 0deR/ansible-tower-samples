@@ -20,7 +20,7 @@
        update_cache=true
        
     - name: install python-boto
-      pip3:
+      pip:
         name: boto
      
     - name: make one instance
