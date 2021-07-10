@@ -15,7 +15,13 @@
        
     - name: install python-boto
       apt:
-       name="python-boto"
+       name="python3-pip"
+       state=present 
+       update_cache=true
+       
+    - name: install python-boto
+      pip:
+       name="boto"
        state=present 
        update_cache=true
      
