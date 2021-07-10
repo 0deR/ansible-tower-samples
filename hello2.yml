@@ -20,10 +20,8 @@
        update_cache=true
        
     - name: install python-boto
-      pip:
-       name="boto"
-       state=present 
-       update_cache=true
+      pip3:
+        name: boto
      
     - name: make one instance
       ec2: image={{ image }}
