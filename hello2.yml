@@ -23,6 +23,3 @@
         count: 1
         vpc_subnet_id: subnet-775a420d
         assign_public_ip: yes
-        aws_access_key: AKIA3PYWA6TATRZYONXP
-        aws_secret_key: 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
-
