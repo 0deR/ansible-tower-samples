@@ -7,22 +7,7 @@
       image: ami-0b9064170e32bde34
       region: us-east-2
   tasks:
-    - name: install python
-      apt:
-       name="python"
-       state=present 
-       update_cache=true
-       
-    - name: install python-boto
-      apt:
-       name="python3-pip"
-       state=present 
-       update_cache=true
-       
-    - name: install python-boto
-      pip:
-        name: boto
-     
+
     - name: make one instance
       ec2: image={{ image }}
            instance_type={{ instance_type }}
